@@ -1,14 +1,14 @@
 import sqlite3
 
-conn = sqlite3.connect('/')
+conn = sqlite3.connect('resources/dataBase.db')
 c = conn.cursor()
 
-c.execute('''
-    DROP TABLE artist;
-    DROP TABLE albums;
-    DROP TABLE tunes;
-    DROP TABLE creates;
-''')
+#c.execute('''
+#    DROP TABLE artist;
+#    DROP TABLE albums;
+#    DROP TABLE tunes;
+#    DROP TABLE creates;
+#''')
 
 c.execute('''
     CREATE TABLE IF NOT EXISTS artists (
@@ -47,3 +47,5 @@ c.execute('''
         )  
     )
 ''')
+
+conn.close()
